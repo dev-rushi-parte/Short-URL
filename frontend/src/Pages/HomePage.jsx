@@ -38,7 +38,7 @@ function HomePage() {
         }
 
 
-        await fetch("http://localhost:2784/", {
+        await fetch("https://stark-bayou-16167.herokuapp.com/", {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {
