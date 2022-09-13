@@ -2,19 +2,22 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const expressEjsLayouts=require("express-ejs-layouts")
 
-
-app.set("view engine",'ejs')
 const app = express();
 app.use(express.json());
 
 app.use(cors());
 
 
+
+
 const connection = require("./config/config");
 
 const URLSchema = require("./Models/urls")
+
+app.get("/", (req, res) => {
+    res.send("home page")
+})
 
 app.post("/", async (req, res) => {
     const { originalURL, shortURL } = req.body;
@@ -51,7 +54,7 @@ app.get("/:shortURL", async (req, res) => {
         res.send({ erroe: true, "msg": "Error 404, This url not Found" })
     }
     else {
-        res.send(data)
+        res.redirect(data[0].originalURL)
     }
 })
 
