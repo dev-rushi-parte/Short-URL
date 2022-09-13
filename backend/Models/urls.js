@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 
 const urlSchema = new mongoose.Schema({
 
-    originalURL: { type: String, require: true },
+    originalURL: { type: String, require: true, unique: true },
     shortURL: { type: String, require: true, unique: true },
     fullURL: { type: String, require: true }
 

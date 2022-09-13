@@ -23,10 +23,12 @@ app.post("/", async (req, res) => {
     const { originalURL, shortURL } = req.body;
     console.log(shortURL)
 
+
+
     const url = await URLSchema.find({ shortURL });
 
     if (url.length === 1) {
-        return res.json({ "message": "This url name is already present" })
+        return res.json({ status: 400, "message": "This URL Name Is Already Present" })
     }
 
     const fullURL = "http://" + req.get('host') + "/" + shortURL;
@@ -39,7 +41,7 @@ app.post("/", async (req, res) => {
     })
     newURL.save()
 
-    res.send({ success: true, fullURL })
+    res.send({ success: true, "message": fullURL })
 
 
 })
