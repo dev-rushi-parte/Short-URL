@@ -3,7 +3,7 @@ import { Alert, Box, Button, Center, Flex, Input, Text, Tooltip, useColorMode, u
 import style from './Home.module.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import { SunIcon, CloseIcon } from '@chakra-ui/icons'
+import { SunIcon, MoonIcon, CloseIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
 function HomePage() {
 
@@ -94,7 +94,8 @@ function HomePage() {
                     borderRadius='25px'
                     pl='19px'
                     fontSize='3xl'
-                > <SunIcon />
+                >
+                    {colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}
                 </Button>
 
 
