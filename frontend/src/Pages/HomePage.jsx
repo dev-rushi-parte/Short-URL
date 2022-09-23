@@ -38,7 +38,7 @@ function HomePage() {
         }
 
 
-        await fetch("https://stark-bayou-16167.herokuapp.com/", {
+        await fetch("https://rushi-tiny-uri.herokuapp.com/", {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {
