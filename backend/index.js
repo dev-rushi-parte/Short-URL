@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 
-
+// use the short id for createing the is 
 
 const connection = require("./config/config");
 
