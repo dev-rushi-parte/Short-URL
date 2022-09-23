@@ -10,6 +10,7 @@ app.use(cors());
 
 
 // use the short id for createing the is 
+// think how we can delete after the 48hours
 
 const connection = require("./config/config");
 
