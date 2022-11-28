@@ -62,7 +62,7 @@ app.get("/:shortURL", async (req, res) => {
     }
 })
 
-
+// listning on port which u given in .evn file
 app.listen(process.env.PORT, async () => {
     try {
         await connection;
