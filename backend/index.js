@@ -20,6 +20,7 @@ const URLSchema = require("./Models/urls")
 app.get("/", (req, res) => {
     res.send("home page")
 })
+// post the two url original and short url
 
 app.post("/", async (req, res) => {
     const { originalURL, shortURL } = req.body;
@@ -48,6 +49,7 @@ app.post("/", async (req, res) => {
 
 })
 
+// getting short url
 app.get("/:shortURL", async (req, res) => {
     const { shortURL } = req.params;
 
